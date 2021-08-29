@@ -2,3 +2,5 @@
 /shelf/
 /workspace.xml
 Learning_Log/db.sqlite3
+Learning_Log/users/__pycache__/urls.cpython-38.pyc
+Learning_Log/learning_logs/__pycache__/views.cpython-38.pyc
