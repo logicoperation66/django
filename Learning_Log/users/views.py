@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
+
 def register(request):
     """Rejestracja nowego użytkownika"""
     if request.method != 'POST':
@@ -19,5 +20,5 @@ def register(request):
             return redirect('learning_logs:index')
 
     #Wyświetlanie pustego formularza.
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'registaration/register.html', context)
