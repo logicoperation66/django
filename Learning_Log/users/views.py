@@ -21,4 +21,4 @@ def register(request):
 
     #Wyświetlanie pustego formularza.
     context = {'form': form}
-    return render(request, 'registaration/register.html', context)
+    return render(request, 'registration/register.html', context)
