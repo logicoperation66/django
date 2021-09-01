@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect, Http404
 
 
 # Create your views here.
@@ -21,6 +22,10 @@ def topics(request):
 def topic(request, topic_id):
     """Wyświetla pojędyńczy teamt i wszystkie powiązane z nim wpisy."""
     topic = Topic.objects.get(id=topic_id)
+    #Upewniamy się że tamat należy do danego użytkownika.
+    if topic.owner != request.user:
+        raise Http404
+
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
