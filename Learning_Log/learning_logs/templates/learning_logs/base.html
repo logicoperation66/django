@@ -33,8 +33,7 @@
             <ul clas="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <span class="navbar-text">Witaj, {{ user.username
-                            }}.</span>
+                        <span class="navbar-text">Witaj, {{ user.username }}.</span>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
@@ -42,13 +41,13 @@
                         </a>
                     </li>
                 {% else %}
-                    <li class="nat-item">
+                    <li class="nav-item">
                         <a class="nav-link"
-                           href="{% url 'user:register' %}">Rejestruj</a>
+                           href="{% url 'users:register' %}">Rejestruj</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'users:login'
-                        %}">Zaloguj</a>
+                        <a class="nav-link" href="{% url 'users:login' %}">
+                            Zaloguj</a>
                     </li>
                 {% endif %}
             </ul>
@@ -59,38 +58,9 @@
                 {% block page_header %}{%endblock page_header %}
             </div>
             <div>
-                {% block content %} {% endblock content %}
+                {% block content %}{% endblock content %}
             </div>
         </main>
     </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<p>-->
-<!--    <a href="{% url 'learning_logs:index' %}">Learning Log</a> - -->
-<!--    <a href="{% url 'learning_logs:topics' %}">Tematy</a> - -->
-<!--    {% if user.is_authenticated %}-->
-<!--        Witaj, {{ user.username }}-->
-<!--        <a href="{% url 'users:logout' %}">Wyloguj</a>-->
-<!--    {% else %}-->
-<!--        <a href="{% url 'users:register' %}">Rejestruj</a>- -->
-<!--        <a href="{% url 'users:login' %}">Zaloguj</a>-->
-<!--    {% endif %}-->
-<!--</p>-->
-
-
-<!--{% block content %}{% endblock content %}-->
